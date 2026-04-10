@@ -17,9 +17,7 @@ Option B - Download ZIP:
     4. Extract the ZIP file
     5. Open terminal in that folder
 
-================================================================================
-STEP 2: CREATE VIRTUAL ENVIRONMENT
-================================================================================
+# STEP 2: CREATE VIRTUAL ENVIRONMENT
 
 Windows:
     python -m venv venv
