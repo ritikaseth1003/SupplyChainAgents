@@ -3,9 +3,8 @@
 ## Repository Link
 https://github.com/ritikaseth1003/SupplyChainAgents
 
-#================================================================================
-STEP 1: GET THE CODE
-#================================================================================
+
+# STEP 1: GET THE CODE
 
 Option A - Clone with Git (Recommended):
     git clone https://github.com/ritikaseth1003/SupplyChainAgents.git
@@ -32,9 +31,8 @@ Mac / Linux:
 
 (You should see (venv) appear at the beginning of your terminal line)
 
-================================================================================
-STEP 3: INSTALL DEPENDENCIES
-================================================================================
+# STEP 3: INSTALL DEPENDENCIES
+
 
 pip install -r requirements.txt
 
@@ -44,9 +42,8 @@ This installs:
     - pandas, numpy, plotly (data & charts)
     - openai, python-dotenv (LLM & config)
 
-================================================================================
-STEP 4: SET UP API KEY (OPTIONAL)
-================================================================================
+# STEP 4: SET UP API KEY (OPTIONAL)
+
 
 Get a free API key from: https://console.groq.com
 
@@ -55,9 +52,8 @@ Then create a file named .env (no extension) with this line:
 
 OR run without API key - system works using fallback logic!
 
-================================================================================
-STEP 5: RUN THE SYSTEM
-================================================================================
+# STEP 5: RUN THE SYSTEM
+
 
 You need TWO terminal windows open side by side:
 
@@ -78,16 +74,14 @@ TERMINAL 2 - Dashboard:
     - "You can now view your Streamlit app in your browser"
     - "Local URL: http://localhost:8501"
 
-================================================================================
-STEP 6: OPEN DASHBOARD
-================================================================================
+# STEP 6: OPEN DASHBOARD
+
 
 Open your web browser (Chrome/Firefox/Edge) and go to:
     http://localhost:8501
 
-================================================================================
-STEP 7: RUN THE DEMO
-================================================================================
+# STEP 7: RUN THE DEMO
+
 
 1. Let the simulation run for 30 seconds
 2. Watch the Agent Chat Log at the bottom - see agents "thinking"
@@ -97,9 +91,8 @@ STEP 7: RUN THE DEMO
 6. Watch the agents react immediately in the chat log
 7. See Recovery Time metric show how fast they stabilized
 
-================================================================================
-WHAT YOU SHOULD SEE
-================================================================================
+# WHAT YOU SHOULD SEE
+
 
 Working Dashboard:
     ✅ Simulation Day increasing (1, 2, 3...)
@@ -117,9 +110,8 @@ When you click Disruption:
     ✅ Logistics Coordinator re-routes shipments
     ✅ Recovery Time shows seconds to stabilize
 
-================================================================================
-TROUBLESHOOTING
-================================================================================
+# TROUBLESHOOTING
+
 
 Problem: "ModuleNotFoundError"
 Solution: pip install -r requirements.txt
@@ -139,9 +131,7 @@ Solution: Make sure you're in the SupplyChainAgents folder (cd SupplyChainAgents
 Problem: Dashboard shows errors
 Solution: Press F5 to refresh, or restart both terminals
 
-================================================================================
-QUICK TEST CHECKLIST
-================================================================================
+# QUICK TEST CHECKLIST
 
 Before showing demo, verify:
     ☐ Simulation Day shows number > 0
@@ -150,9 +140,7 @@ Before showing demo, verify:
     ☐ Trigger Disruption button is red and clickable
     ☐ Both terminals are still running
 
-================================================================================
-TEAMMATES - AFTER SETUP
-================================================================================
+# TEAMMATES - AFTER SETUP
 
 Once running, explore:
     - Click "Reset Simulation" to start over
@@ -160,13 +148,10 @@ Once running, explore:
     - Scroll through Agent Chat Log to see Chain-of-Thought reasoning
     - Watch how fast the system recovers (3-7 seconds)
 
-================================================================================
-SUPPORT
-================================================================================
-
+# SUPPORT
 GitHub: https://github.com/ritikaseth1003/SupplyChainAgents
 README: Contains full documentation
 
-================================================================================
-✅ SETUP COMPLETE! YOU'RE READY TO RUN THE DEMO!
-================================================================================
+
+# ✅ SETUP COMPLETE! YOU'RE READY TO RUN THE DEMO!
+
