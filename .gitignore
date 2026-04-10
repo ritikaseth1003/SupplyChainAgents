@@ -1,0 +1,27 @@
+# Virtual Environment (DO NOT UPLOAD!)
+venv/
+py310/
+env/
+.venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.so
+
+# Environment variables (has your API key!)
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project specific
+*.log
+.pytest_cache/
