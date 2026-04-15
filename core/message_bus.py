@@ -14,7 +14,11 @@ import logging
 from typing import Any
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+import os
+
+from agents.reporting_agent import generate_pdf_report
 
 from core.state_manager import StateManager
 
@@ -130,3 +134,29 @@ async def reset_simulation() -> dict:
     state.__init__()
     await manager.broadcast({"type": "reset", "agent": "System", "message": "Simulation reset."})
     return {"status": "ok"}
+
+
+@app.post("/generate-report")
+async def trigger_report() -> dict:
+    current_state = await state.snapshot()
+    filename = await generate_pdf_report(current_state)
+    return {"status": "ok", "filename": filename}
+
+@app.get("/reports")
+async def list_reports() -> dict:
+    reports_dir = os.path.join(os.path.dirname(__file__), "..", "reports")
+    if not os.path.exists(reports_dir):
+        return {"reports": []}
+    
+    files = [f for f in os.listdir(reports_dir) if f.endswith('.pdf')]
+    files.sort(reverse=True)
+    return {"reports": files}
+
+@app.get("/reports/{filename}")
+async def get_report(filename: str):
+    reports_dir = os.path.join(os.path.dirname(__file__), "..", "reports")
+    filepath = os.path.join(reports_dir, filename)
+    if os.path.exists(filepath):
+        return FileResponse(filepath, filename=filename)
+    return {"error": "Report not found"}
+

@@ -189,6 +189,31 @@ with st.sidebar:
         except Exception:
             st.error("Could not reset – is the server running?")
     
+    st.markdown("---")
+    st.markdown("### 📄 Reporting")
+    if st.button("Generate Daily Report", use_container_width=True):
+        with st.spinner("Generating AI Report..."):
+            try:
+                res = httpx.post(f"{API_BASE}/generate-report", timeout=30)
+                if res.status_code == 200:
+                    st.success("Report Generated!")
+                else:
+                    st.error("Report generation failed.")
+            except Exception as e:
+                st.error(f"Error: {e}")
+
+    try:
+        rep_res = httpx.get(f"{API_BASE}/reports", timeout=3)
+        reports = rep_res.json().get("reports", [])
+        if reports:
+            with st.expander("📥 Download Reports", expanded=True):
+                for r in reports[:5]:
+                    st.markdown(f"- [{r}]({API_BASE}/reports/{r})")
+    except Exception:
+        pass
+
+    st.markdown("---")
+    
     auto_refresh = st.toggle("Auto-refresh (6s)", value=True)
     
     st.markdown("---")

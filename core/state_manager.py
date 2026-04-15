@@ -43,10 +43,10 @@ class StateManager:
 
         # Agent states
         self.agent_states: dict[str, str] = {
-            "DemandForecaster": "idle",
-            "InventoryManager": "idle",
-            "ReplenishmentPlanner": "idle",
-            "LogisticsCoordinator": "idle",
+            "DemandForecaster": "Online 🟢",
+            "InventoryManager": "Online 🟢",
+            "ReplenishmentPlanner": "Online 🟢",
+            "LogisticsCoordinator": "Online 🟢",
         }
 
         # Chat log  [(timestamp, agent, message)]
