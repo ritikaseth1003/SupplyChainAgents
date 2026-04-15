@@ -77,6 +77,17 @@ async def websocket_endpoint(ws: WebSocket) -> None:
             msg = data.get("message", "")
             if msg:
                 await state.log_chat(agent, msg)
+                
+            msg_type = data.get("type")
+            if msg_type == "forecast_update":
+                forecasts = data.get("forecasts", {})
+                for product, vals in forecasts.items():
+                    await state.set_forecasts(product, vals)
+            elif msg_type == "new_purchase_orders":
+                orders = data.get("orders", [])
+                for po in orders:
+                    await state.add_purchase_order(po)
+
             # Broadcast to everyone
             await manager.broadcast(data)
     except WebSocketDisconnect:

@@ -80,7 +80,7 @@ class BaseAgent(ABC):
                 await self.process()
             except Exception as exc:
                 logger.error("%s process error: %s", self.NAME, exc)
-            await asyncio.sleep(2)  # tick every 2 seconds
+            await asyncio.sleep(6)  # tick every 6 seconds
 
     # ----- abstract -----
     @abstractmethod

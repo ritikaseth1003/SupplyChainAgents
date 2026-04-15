@@ -189,7 +189,7 @@ with st.sidebar:
         except Exception:
             st.error("Could not reset – is the server running?")
     
-    auto_refresh = st.toggle("Auto-refresh (2s)", value=True)
+    auto_refresh = st.toggle("Auto-refresh (6s)", value=True)
     
     st.markdown("---")
     st.markdown(
@@ -396,5 +396,5 @@ else:
 
 # ---- Auto-refresh ----
 if auto_refresh:
-    time.sleep(2)
+    time.sleep(6)
     st.rerun()

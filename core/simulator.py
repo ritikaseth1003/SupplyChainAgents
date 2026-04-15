@@ -117,7 +117,7 @@ async def run_simulation_loop() -> None:
             await simulation_tick()
         except Exception as exc:
             logger.error("Sim tick error: %s", exc)
-        await asyncio.sleep(3)
+        await asyncio.sleep(6)
 
 
 # ---------------------------------------------------------------------------
